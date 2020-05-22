@@ -2,20 +2,21 @@ import React, { useState, useEffect } from 'react';
 
 export default function Profile (props) {
 
-    const [profile, setProfile] = useState(null);
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [profile, setProfile] = useState(props.apiData);
 
     useEffect(() => {
-        setLoggedIn(loggedIn);
-    }, [loggedIn]);
-
-    useEffect(() => {
-        setProfile(profile);
-    }, [profile]);
+        setProfile(props.apiData);
+    }, [props.apiData]);
 
     return (
         <div>
-            {props.loggedIn && props.apiData ? 'Loading profile...' : <div></div>}
+            {profile ?
+                <div>
+                    <p>Country:</p> {profile.country}
+                    <p>Display Name:</p> {profile.display_name}
+                </div>
+                :
+                <div></div>}
         </div>
     );
 }

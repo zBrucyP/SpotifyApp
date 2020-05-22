@@ -34,6 +34,7 @@ function App() {
                 if (response.status === 200) { // request returned successfully
                     const data = await response.json();
                     setProfile(data);
+                    console.log(data);
                 }
                 else if (response.status === 401) {
                     setLoggedIn(false);
@@ -64,13 +65,23 @@ function App() {
 
     return (
         <div className='App'>
-            {loggedIn ? '' :
-                <div>
-                    <h2>Login to continue!</h2>
-                    <a href='http://localhost:8888/login'>Login</a>
-                </div>
-            }
-            <Profile apiData={profile} loggedIn={loggedIn}/>
+            <div className='heading'>
+                Your Spotify Account
+            </div>
+            <div className="separator">
+            </div>
+            <div className='profileContainer'>
+                {loggedIn ?
+                    <div>
+                        <Profile apiData={profile}/>
+                    </div>
+                    :
+                    <div className='loginContainer'>
+                        <h2>Login to continue!</h2>
+                        <a href='http://localhost:8888/login'>Login</a>
+                    </div>
+                }
+            </div>
         </div>
     );
 }
