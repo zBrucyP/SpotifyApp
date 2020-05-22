@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import {useParams} from 'react-router';
+import React, { useState, useEffect } from 'react';
+import Profile from './Profile';
 import './App.css';
 
-
-// use fetch to query the server for the authentication
-// don't let react leave this page, there is no point, they should be independent
 
 function App() {
 
@@ -23,11 +20,34 @@ function App() {
     const [accessToken, setAccessToken] = useState(() => getParam('access_token'));
     const [refreshToken, setRefreshToken] = useState(() => getParam('refresh_token'));
     const [loggedIn, setLoggedIn] = useState(accessToken ? true : false);
+    const [profile, setProfile] = useState(null);
+
+// https://api.spotify.com/v1/me
+
+    useEffect ( () => {
+        async function fetchSpotifyMe() {
+            try {
+                const response = await fetch('https://api.spotify.com/v1/me', {
+                    headers: {
+                        Authorization: 'Bearer ' + accessToken
+                    }
+                });
+                const data = await response.json();
+                console.log(data);
+                setProfile(data);
+            } catch(e) {
+                console.log(e);
+            }
+        }
+
+        fetchSpotifyMe();
+    }, []);
 
     return (
         <div className='App'>
             {loggedIn ? '' : <a href='http://localhost:8888/login'>Login</a>}
-            <p>{accessToken}</p>
+            <p>{profile ? profile.country : ''}</p>
+            <Profile apiData={profile}/>
         </div>
     );
 }
