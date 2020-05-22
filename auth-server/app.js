@@ -124,6 +124,7 @@ app.get('/refresh_token', function(req, res) {
 
   // requesting access token from refresh token
   var refresh_token = req.query.refresh_token;
+  console.log(refresh_token);
   var authOptions = {
     url: 'https://accounts.spotify.com/api/token',
     headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
@@ -135,11 +136,15 @@ app.get('/refresh_token', function(req, res) {
   };
 
   request.post(authOptions, function(error, response, body) {
+    console.log(response.statusCode);
     if (!error && response.statusCode === 200) {
       var access_token = body.access_token;
       res.send({
         'access_token': access_token
       });
+    }
+    else {
+        console.log(error);
     }
   });
 });

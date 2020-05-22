@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Profile (props) {
 
-    const [filled, setFilled] = useState(false);
     const [profile, setProfile] = useState(null);
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+        setLoggedIn(loggedIn);
+    }, [loggedIn]);
+
+    useEffect(() => {
+        setProfile(profile);
+    }, [profile]);
 
     return (
         <div>
-            {props.apiData ? 'Spotify Profile Data Received!' : 'Loading profile...'}
+            {props.loggedIn && props.apiData ? 'Loading profile...' : <div></div>}
         </div>
     );
 }
