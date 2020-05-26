@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Profile from './Profile';
 import './App.css';
+import spotify_logo_white from './img/Spotify_Icon_RGB_White.png';
 
 
 function App() {
@@ -69,16 +70,16 @@ function App() {
                 <div className='heading'>Your Info...</div>
                 <div className="fromSpotify">from Spotify</div>
             </div>
-            <div className="separator"></div>
-            <div className='profileContainer'>
+            <div className='separator'></div>
+            <div className='allUserInfoContainer'>
                 {loggedIn ?
-                    <div>
+                    <div className='profileContainer'>
                         <Profile apiData={profile}/>
                     </div>
-                    :
+                :
                     <div className='loginContainer'>
-                        <h2>Login to Spotify to continue!</h2>
-                        <a className="loginLink" href='http://localhost:8888/login'>Login</a>
+                        <h2 className='headerContainer'>Login with Spotify to continue!</h2>
+                        <a className='loginLink' href='http://localhost:8888/login'>Login <img src={spotify_logo_white} alt='spotify_logo' width='25px'></img></a>
                     </div>
                 }
             </div>

@@ -2,11 +2,12 @@
 To align with Spotify: https://developer.spotify.com/branding-guidelines/
 */
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 :root {
     --accent: #1DB954;
     --dark: #191414;
-    --dark60: rgba(25, 20, 20, .6);
+    --dark70: rgba(25, 20, 20, .7);
     --light: #FFFFFF;
     --transition: all 0.3s ease 0s;
 }
@@ -17,10 +18,17 @@ html, body {
 }
 
 body {
-    background: linear-gradient(
-        var(--dark),
-        var(--dark)
-        );
+    background:
+        linear-gradient(
+            var(--dark70),
+            var(--dark70)
+        ),
+        url('./img/waiting-for-transit.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
 }
 
 .App {
@@ -49,22 +57,43 @@ body {
 
 .separator {
     border: .5px solid var(--acent);
+    height:10px;
     opacity: 1;
 }
 
 .profileContainer {
     text-align: center;
-    background: #191414 0% 0% no-repeat padding-box;
-    opacity: 1;
-    width:100%;
+    background: var(--dark) 0% 0% no-repeat padding-box;
+    opacity: .9;
+    width: 100%;
     letter-spacing: 0px;
-    color: #FFFFFF;
+    color: var(--light);
+}
+
+.loginContainer {
+    text-align: center;
+    background: var(--dark) 0% 0% no-repeat padding-box;
+    opacity: .8;
+    width: 100%;
+    letter-spacing: 0px;
+    color: var(--light);
+    padding: 15px;
 }
 
 .loginLink {
-    color: #FFFFFF;
-    border: 1px solid #1DB954;
+    color: var(--light);
+    border: 1px solid var(--accent);
+    background-color: var(--accent);
     font-size: 125%;
-    font-family: Helvetica;
-    padding: 5px;
+    font-family: Lato;
+    letter-spacing: 2px;
+    padding: 7px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.headerContainer {
+    font-family: Lato;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
