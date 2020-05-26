@@ -1,26 +1,70 @@
+/*
+To align with Spotify: https://developer.spotify.com/branding-guidelines/
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+:root {
+    --accent: #1DB954;
+    --dark: #191414;
+    --dark60: rgba(25, 20, 20, .6);
+    --light: #FFFFFF;
+    --transition: all 0.3s ease 0s;
+}
+
+html, body {
+    height:100%;
+    overflow: auto;
+}
+
+body {
+    background: linear-gradient(
+        var(--dark),
+        var(--dark)
+        );
+}
+
 .App {
-  text-align: center;
+    text-align: center;
+}
+
+.headingContainer {
+    background: var(--accent) 0% 0% no-repeat padding-box;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    width:100%;
 }
 
 .heading {
-    background: #191414 0% 0% no-repeat padding-box;
+    text-align: center;
     opacity: 1;
-    width:100%;
-    font: Bold 24px/42px Helvetica;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    padding:5vh;
+    font: Bold 42px Lobster;
+    color: var(--light);
+    letter-spacing: 2px;
+}
+
+.fromSpotify {
+    font: Bold 24px Lobster;
+    color: var(--light);
 }
 
 .separator {
-    border: 2px solid #FFFFFF;
+    border: .5px solid var(--acent);
     opacity: 1;
 }
 
 .profileContainer {
+    text-align: center;
     background: #191414 0% 0% no-repeat padding-box;
     opacity: 1;
     width:100%;
     letter-spacing: 0px;
     color: #FFFFFF;
+}
+
+.loginLink {
+    color: #FFFFFF;
+    border: 1px solid #1DB954;
+    font-size: 125%;
+    font-family: Helvetica;
+    padding: 5px;
 }

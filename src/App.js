@@ -65,11 +65,11 @@ function App() {
 
     return (
         <div className='App'>
-            <div className='heading'>
-                Your Spotify Account
+            <div className='headingContainer'>
+                <div className='heading'>Your Info...</div>
+                <div className="fromSpotify">from Spotify</div>
             </div>
-            <div className="separator">
-            </div>
+            <div className="separator"></div>
             <div className='profileContainer'>
                 {loggedIn ?
                     <div>
@@ -77,8 +77,8 @@ function App() {
                     </div>
                     :
                     <div className='loginContainer'>
-                        <h2>Login to continue!</h2>
-                        <a href='http://localhost:8888/login'>Login</a>
+                        <h2>Login to Spotify to continue!</h2>
+                        <a className="loginLink" href='http://localhost:8888/login'>Login</a>
                     </div>
                 }
             </div>
