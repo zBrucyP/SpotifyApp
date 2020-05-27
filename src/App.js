@@ -66,7 +66,7 @@ function App() {
 
     return (
         <div className='App'>
-            <div className='headingContainer'>
+            <div className='appHeadingContainer'>
                 <div className='heading'>Your Info...</div>
                 <div className="fromSpotify">from Spotify</div>
             </div>
