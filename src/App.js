@@ -73,8 +73,12 @@ function App() {
             <div className='separator'></div>
             <div className='allUserInfoContainer'>
                 {loggedIn ?
-                    <div className='profileContainer'>
-                        <Profile apiData={profile}/>
+                    <div>
+                        <div className='componentContainer'>
+                            <Profile apiData={profile}/>
+                        </div>
+                        <div className='componentContainer'>
+                        </div>
                     </div>
                 :
                     <div className='loginContainer'>
