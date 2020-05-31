@@ -140,20 +140,39 @@ body {
 }
 
 .topArtistTrackContainer {
-    display: flex; /* TODO: change to grid */
+    display: grid; /* TODO: change to grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
 }
 
 .topArtistTrackComponent {
-    width: 34%;
+    width: 70%;
+    height: 500px;
     overflow: scroll;
     margin: 15px;
-    border-color: var(--accent);
 }
 
 .scrollListElement {
     width: 100%;
-    border-color: var(--dark);
+    text-align: left;
+    color: var(--accent);
+    border-color: var(--light);
     border-style: solid;
     border-width: 1px;
-    margin:auto;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 105%;
+    margin: auto;
+}
+
+.scrollListElement > div {
+    display: inline-block;
+    word-wrap: break-word;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}
+
+.scrollListElement > div > a {
+    color: var(--accent);
+    text-decoration: none;
 }

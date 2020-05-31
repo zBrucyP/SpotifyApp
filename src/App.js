@@ -91,7 +91,7 @@ function App() {
                 });
                 if (response.status === 200) { // set data
                     const data = await response.json();
-                    if (type == 'tracks') {setTopTracks(data)}
+                    if (type === 'tracks') {setTopTracks(data)}
                         else {setTopArtists(data)}
                     console.log(data);
                 }
