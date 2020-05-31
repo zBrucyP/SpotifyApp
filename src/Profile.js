@@ -3,11 +3,11 @@ import './App.css';
 
 export default function Profile (props) {
 
-    const [profile, setProfile] = useState(props.apiData);
+    const [profile, setProfile] = useState(props.apiProfileData);
 
     useEffect(() => {
-        setProfile(props.apiData);
-    }, [props.apiData]);
+        setProfile(props.apiProfileData);
+    }, [props.apiProfileData]);
 
     return (
         <div>

@@ -138,3 +138,22 @@ body {
     font-weight: 400;
     font-size: 105%;
 }
+
+.topArtistTrackContainer {
+    display: flex; /* TODO: change to grid */
+}
+
+.topArtistTrackComponent {
+    width: 34%;
+    overflow: scroll;
+    margin: 15px;
+    border-color: var(--accent);
+}
+
+.scrollListElement {
+    width: 100%;
+    border-color: var(--dark);
+    border-style: solid;
+    border-width: 1px;
+    margin:auto;
+}
