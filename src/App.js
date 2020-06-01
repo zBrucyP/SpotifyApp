@@ -25,9 +25,8 @@ function App() {
     const [loggedIn, setLoggedIn] = useState(accessToken ? true : false);
     const [profile, setProfile] = useState(null); // stores basic user profile info as json
     const [topTracks, setTopTracks] = useState(null); // stores user's top track info as json
-    const [topTracksTimeFrame, setTracksTimeFrame] = useState('long_term');
     const [topArtists, setTopArtists] = useState(null);
-    const [topArtistsTimeFrame, setArtistsTimeFrame] = useState('long_term');
+    const [topTimeFrame, setTopTimeFrame] = useState('medium_term');
 
     async function refreshAccess() {
         const refresh_res = await fetch('http://localhost:8888/refresh_token'
@@ -79,15 +78,15 @@ function App() {
     useEffect ( () => {
         async function fetchTopTracksArtists(type) {
             try {
-                var time_range = null; // define time range for query
-                if (type == 'tracks') {time_range = topTracksTimeFrame}
-                    else {time_range = topArtistsTimeFrame}
-
-                const response = await fetch('https://api.spotify.com/v1/me/top/' + type + '/', { // fetch data
-                    headers: {
-                        Authorization: 'Bearer ' + accessToken
+                const response = await fetch(
+                    'https://api.spotify.com/v1/me/top/'
+                    + type
+                    + '/'
+                    + '?time_range=' + topTimeFrame,
+                    { // fetch data
+                        headers: {
+                            Authorization: 'Bearer ' + accessToken
                     },
-                    time_range: time_range
                 });
                 if (response.status === 200) { // set data
                     const data = await response.json();
@@ -113,9 +112,14 @@ function App() {
 
         fetchTopTracksArtists('tracks');
         fetchTopTracksArtists('artists');
-    }, [topTracksTimeFrame, topArtistsTimeFrame]);
+    }, [topTimeFrame]);
 
-    /*  */
+    /* handle top tracks/artists radio button onChange */
+    function updateTimeFrame (e) {
+        if(e.target.checked) {
+            setTopTimeFrame(e.target.value);
+        }
+    }
 
     return (
         <div className='App'>
@@ -132,6 +136,18 @@ function App() {
                         </div>
                         <div className='componentContainer'>
                             <h2 className='headerContainer'>Top Tracks & Artists</h2>
+                            <input type='radio' name='timeFrame'
+                                   value='short_term'
+                                   checked={topTimeFrame === 'short_term'}
+                                   onChange={updateTimeFrame}/> Short
+                             <input type='radio' name='timeFrame'
+                                   value='medium_term'
+                                   checked={topTimeFrame === 'medium_term'}
+                                   onChange={updateTimeFrame}/> Medium
+                             <input type='radio' name='timeFrame'
+                                   value='long_term'
+                                   checked={topTimeFrame === 'long_term'}
+                                   onChange={updateTimeFrame}/> Long
                             <div className='topArtistTrackContainer'>
                                 <TopArtistTrack type='tracks' apiTracksArtistData={topTracks} />
                                 <TopArtistTrack type='artists' apiTracksArtistData={topArtists} />
