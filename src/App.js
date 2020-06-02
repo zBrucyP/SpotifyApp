@@ -157,7 +157,7 @@ function App() {
                 :
                     <div className='loginContainer'>
                         <h2 className='headerContainer'>Login with Spotify to continue!</h2>
-                        <a className='loginLink' href='http://localhost:8888/login'>Login <img src={spotify_logo_white} alt='spotify_logo' width='25px'></img></a>
+                        <a className='loginLink' href='http://localhost:8888/login'>Login <img src={spotify_logo_white} className='spotifyLogo' alt='spotify_logo' width='25px'></img></a>
                     </div>
                 }
             </div>

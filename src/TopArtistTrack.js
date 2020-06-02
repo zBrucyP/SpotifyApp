@@ -26,12 +26,12 @@ export default function TopArtistTrack(props) {
 
     /* refresh list if query is refreshed*/
     useEffect( () => {
-        if (data != null && type === 'artists') {
+        if (data != null && type === 'artists') { // create artist element
             setListItems(data.items.map((item, i) =>
                 <ScrollListElement key={item.id} rank={i} link={item.external_urls.spotify} title={item.name} imgUrl={item.images[0].url} subInfo=''/>
             ));
         }
-        if (data != null && type === 'tracks') {
+        if (data != null && type === 'tracks') { // create track element
             setListItems(data.items.map((item, i) =>
                 <ScrollListElement key={item.id} rank={i} link={item.external_urls.spotify} title={item.name} imgUrl={item.album.images[0].url} subInfo={item.artists[0].name}/>
             ));
@@ -58,7 +58,7 @@ export default function TopArtistTrack(props) {
     );
 }
 
-function ScrollListElement (listItem) {
+function ScrollListElement (listItem) { // represents a single row in lsit of track/artist
     return (
         <div className='scrollListElement' key={listItem.key}>
             <div>
