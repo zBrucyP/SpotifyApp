@@ -9,6 +9,15 @@
 <br />
 <br />
 
+![login_screen_img](https://github.com/zBrucyP/SpotifyApp/blob/master/public/login_screen.PNG)
+
+<br />
+
+![profile_example_img](https://github.com/zBrucyP/SpotifyApp/blob/master/public/profile_example.png)
+
+<br />
+<br />
+
 ## How to use this repo
 
 ### 1. Create a Spotify app
