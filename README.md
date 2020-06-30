@@ -5,6 +5,7 @@ App example deployed [Here](https://master.d1yem99bcuvi6i.amplifyapp.com/)
    - Back-end (Node auth-server) deployed on Heroku
 
 
+
 ## How to use this repo
 
 ### 1. Create a Spotify app
