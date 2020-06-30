@@ -2,12 +2,14 @@
 
 <br />
 
-## App example deployed [Here](https://master.d1yem99bcuvi6i.amplifyapp.com/)
+## App deployed [Here](https://master.d1yem99bcuvi6i.amplifyapp.com/)
    - Front-end (React) deployed on AWS Amplify
    - Back-end (Node auth-server) deployed on Heroku
 
 <br />
 <br />
+
+## Example
 
 ![login_screen_img](https://github.com/zBrucyP/SpotifyApp/blob/master/public/login_screen.PNG)
 
