@@ -1,11 +1,10 @@
 # Your info... with data from Spotify
-
+<br />
 ## App example deployed [Here](https://master.d1yem99bcuvi6i.amplifyapp.com/)
    - Front-end (React) deployed on AWS Amplify
    - Back-end (Node auth-server) deployed on Heroku
 <br />
 <br />
-
 ## How to use this repo
 
 ### 1. Create a Spotify app
