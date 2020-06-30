@@ -1,6 +1,6 @@
 # Your info... with data from Spotify
 
-App deployed here: todo
+App deployed [https://master.d1yem99bcuvi6i.amplifyapp.com/](Here)
 
 
 ## How to use this repo
